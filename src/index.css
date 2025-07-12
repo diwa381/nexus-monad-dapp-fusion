@@ -2,41 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Web3 DeFi Platform Design System - Blockchain Aesthetics
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Background & Text */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card Components */
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Popover & Overlay */
+    --popover: 240 7% 6%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary Brand - Electric Blue */
+    --primary: 217 91% 60%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --primary-glow: 217 91% 70%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Deep Purple */
+    --secondary: 263 70% 50%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted Elements */
+    --muted: 217 19% 20%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Cyan */
+    --accent: 180 78% 55%;
+    --accent-foreground: 222.2 84% 4.9%;
 
-    --destructive: 0 84.2% 60.2%;
+    /* Success - Green */
+    --success: 142 71% 45%;
+    --success-foreground: 355.7 100% 97.3%;
+
+    /* Warning - Orange */
+    --warning: 32 95% 44%;
+    --warning-foreground: 355.7 100% 97.3%;
+
+    /* Destructive - Red */
+    --destructive: 0 72% 51%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* UI Elements */
+    --border: 217 27% 15%;
+    --input: 217 27% 12%;
+    --ring: 217 91% 60%;
 
-    --radius: 0.5rem;
+    /* Design Tokens */
+    --radius: 0.75rem;
+
+    /* Custom Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--accent)));
+    --gradient-dark: linear-gradient(135deg, hsl(240 10% 3.9%), hsl(240 7% 6%));
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
+    --shadow-elevated: 0 25px 50px -12px rgba(0,0,0,0.8);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +133,74 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    background: linear-gradient(135deg, hsl(var(--background)), hsl(240 7% 6%));
+    min-height: 100vh;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Glass Effect Cards */
+  .glass-card {
+    @apply backdrop-blur-lg bg-gradient-glass border border-border/50 shadow-elevated;
+  }
+
+  /* Glow Effects */
+  .glow-primary {
+    @apply shadow-glow;
+  }
+
+  .glow-hover {
+    @apply transition-all duration-300 hover:shadow-glow;
+  }
+
+  /* Web3 Button Variants */
+  .btn-web3 {
+    @apply bg-gradient-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg;
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-glow;
+    @apply border border-primary/20;
+  }
+
+  .btn-ghost-web3 {
+    @apply bg-transparent border border-primary/30 text-primary;
+    @apply transition-all duration-300 hover:bg-primary/10 hover:border-primary;
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-primary bg-clip-text text-transparent;
+  }
+
+  /* Module Grid Layout */
+  .module-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6;
+  }
+
+  /* Dashboard Stats */
+  .stat-card {
+    @apply glass-card p-6 rounded-xl hover:scale-105 transition-transform duration-300;
+  }
+
+  /* Loading States */
+  .loading-shimmer {
+    @apply animate-pulse bg-gradient-to-r from-muted/50 via-muted/30 to-muted/50;
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  /* Web3 Input Styling */
+  .web3-input {
+    @apply bg-input/50 backdrop-blur-sm border border-border/60;
+    @apply focus:border-primary focus:ring-2 focus:ring-primary/20;
+    @apply transition-all duration-300;
   }
 }
