@@ -1,73 +1,77 @@
-# Welcome to your Lovable project
+# 🔗 MonadX — All-in-One Next-Gen dApp on Monad
 
-## Project info
+**MonadX** is a powerful full-stack decentralized application (dApp) built on the **Monad testnet**, combining four cutting-edge blockchain features into a single unified platform:
 
-**URL**: https://lovable.dev/projects/4a915f9e-d59c-41df-97b5-799330097779
+> Restaking Vaults • Intent-Based DeFi Aggregator • zkML Prediction Oracle • Modular Smart Wallet (ERC-7579)
 
-## How can I edit this code?
+⚡ Built in 24 hours for the [Monad Blitz Hackathon – Hyderabad, 2025](https://monad.xyz)
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## ✨ Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/4a915f9e-d59c-41df-97b5-799330097779) and start prompting.
+| Module                | Description                                                                 |
+|-----------------------|-----------------------------------------------------------------------------|
+| 🪙 Restaking Vaults   | Deposit LSTs like rsETH into vaults for parallel restaking across protocols |
+| 💡 DeFi Intent Engine | Express a yield or swap goal; get optimized execution via intents          |
+| 🔮 zkML Oracle        | AI model returns predictions with on-chain zk-proof verification            |
+| 🔐 Smart Wallet (AA)  | Modular wallet with gasless TXs, social recovery, plugins & intents         |
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🧠 Tech Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Blockchain**: [Monad Testnet](https://monad.xyz)
+- **Smart Contracts**: Solidity (via Foundry or Hardhat)
+- **Frontend**: React + Vite + Tailwind CSS
+- **Wallet Integration**: wagmi + viem + Web3Modal
+- **Account Abstraction**: ERC-7579 modules (gasless, social recovery, etc.)
+- **zkML (Simulated)**: Python model with dummy zk-SNARK verification
+- **Storage**: IPFS/web3.storage (for zkML data)
+- **Deployment**: Vercel
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 🚀 Live Demo
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+> 🔗 https://nexus-monad-dapp-fusion.vercel.app/
+> 🧪 Requires MetaMask + Monad Testnet tokens.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 🖼️ Screenshots
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+![MonadX Dashboard](./screenshots/dashboard.png)
+![Intent Aggregator](./screenshots/intent.png)
+![zkML Prediction](./screenshots/zkml.png)
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🔄 Modules Overview
 
-**Use GitHub Codespaces**
+### 🪙 Restaking Vaults
+- Deposit rsETH
+- Select vault strategy (auto/manual)
+- Receive NFT receipt
+- Claim staking rewards
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### 💡 Intent-Based DeFi Aggregator
+- Express intent (e.g., "5% APY")
+- Backend simulates paths
+- Executes optimal route via smart contract
 
-## What technologies are used for this project?
+### 🔮 zkML Prediction Oracle
+- Upload input data (e.g., credit score)
+- Model runs off-chain
+- Returns result + zk-proof
+- Contract verifies proof on-chain
 
-This project is built with:
+### 🔐 Modular Smart Wallet (ERC-7579)
+- Connects smart wallet
+- Plugin system for:
+  - Gasless transactions
+  - Social recovery
+  - Intent signing
+- Real TXs on Monad
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/4a915f9e-d59c-41df-97b5-799330097779) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+---
